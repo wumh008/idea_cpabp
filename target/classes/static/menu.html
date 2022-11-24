@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>代理中央财政系统</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel='icon' href='favicon.ico' type='image/x-ico'/>
+    <!-- Boxiocns CDN Link -->
+    <link href='css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload=startclock()>
+<div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus'></i>
+        <span class="logo_name">菜单列表</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">公共</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">公共</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易1</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易2</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易3</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bxl-apple'></i>
+                    <span class="link_name">技术</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">技术</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易1</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易2</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易3</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bxs-hourglass'></i>
+                    <span class="link_name">额度</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">额度</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易1</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易2</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易3</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-message'></i>
+                    <span class="link_name">信息</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">信息</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易1</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易2</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易3</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-dollar'></i>
+                    <span class="link_name">清算</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">清算</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易1</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易2</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易3</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bxs-report'></i>
+                    <span class="link_name">报表</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">报表</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易1</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易2</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易3</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bxl-paypal'></i>
+                    <span class="link_name">账务</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">账务</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易1</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易2</a></li>
+                <li><a href="loading.html" target="wrap-iframe">交易3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-history'></i>
+                <span class="link_name">历史</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">历史</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cog'></i>
+                <span class="link_name">设置</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">设置</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="../img/profile.png" alt="profile" onclick="showUserdtl()">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name" th:text="${user.name}"></div>
+                    <div class="job" th:text="${user.position}"></div>
+                </div>
+                <i class='bx bx-power-off'></i>
+            </div>
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <div class="home-content">
+        <i class="bx bx-menu"></i>
+        <span class="text">代理中央财政</span>
+        <div class="query"><input id="input-box" type="text" placeholder="请输入..."/><input id="input-btn"
+                                                                                          type="image"
+                                                                                          src="../img/search.png"/>
+        </div>
+        <div class="clock">
+            <form name="clock">
+                <script language="JavaScript">
+                    var timerID = null;
+                    var timerRunning = false;
+
+                    function stopclock() {
+                        if (timerRunning)
+                            clearTimeout(timerID);
+                        timerRunning = false;
+                    }
+
+                    function startclock() {
+                        stopclock();
+                        showtime();
+                    }
+
+                    function showtime() {
+                        var now = new Date();
+                        var hours = now.getHours();
+                        var minutes = now.getMinutes();
+                        var seconds = now.getSeconds();
+                        var timeValue = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日" + ((hours >= 12) ?
+                            " 下午 " : " 上午 ")
+                        timeValue += ((hours > 12) ? hours - 12 : hours)
+                        timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+                        timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+                        document.clock.thetime.value = timeValue;
+                        timerID = setTimeout("showtime()", 1000);
+                        timerRunning = true;
+                    }
+                </script>
+                <input name="thetime" style="font-size: 14pt;background-color:transparent;border:0;color: #FFFFFF;"
+                       size="30"
+                       type="text">
+            </form>
+        </div>
+        <div class="theme">
+            <img src="../img/theme.png" alt="主题" title="主题" onclick="changeTheme()">
+        </div>
+
+        <!-- 页面主题 -->
+
+
+        <div class="sub-html">
+            <!-- 加载子页面 -->
+            <iframe id="wrap-iframe" name="wrap-iframe" src="" frameborder="0"></iframe>
+            <script type="text/javascript">
+                var htmlPath = "userdtl.html";
+                document.getElementById("wrap-iframe").setAttribute("src", htmlPath);
+            </script>
+
+        </div>
+
+        <!-- 页面主题 -->
+
+
+    </div>
+</section>
+
+<script>
+    var themeFlag = 1;
+
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener("click", (e) => {
+            let arrowParent = e.target.parentElement.parentElement;
+            arrowParent.classList.toggle("showMenu");
+        });
+    }
+
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    });
+
+    let sidebarBtn2 = document.querySelector(".bx-power-off");
+    console.log(sidebarBtn2);
+    sidebarBtn2.addEventListener("click", () => {
+        window.location.href="about:blank";
+        window.close();
+    });
+
+    /*切换主题*/
+    function changeTheme() {
+        var root = document.querySelector(":root");
+        if (themeFlag === 1) {
+            root.setAttribute("style",
+                "--bg-color-1: #3b7a99;--bg-color-2: #4c9cc5;--bg-color-3: #4c9cc5;--bg-color-4: #336a86;--bg-color-5: #4c9cc5;"
+            );
+        } else if (themeFlag === 2) {
+            root.setAttribute("style",
+                "--bg-color-1: #71ab1a;--bg-color-2: #89d121;--bg-color-3: #89d121;--bg-color-4: #537d13;--bg-color-5: #89d121;"
+            );
+        } else if (themeFlag === 3) {
+            root.setAttribute("style",
+                "--bg-color-1: #bf8300;--bg-color-2: #f0a700;--bg-color-3: #f0a700;--bg-color-4: #9c6b00;--bg-color-5: #f0a700;"
+            );
+        } else if (themeFlag === 4) {
+            root.setAttribute("style",
+                "--bg-color-1: #096d52;--bg-color-2: #0d9f76;--bg-color-3: #0d9f76;--bg-color-4: #054834;--bg-color-5: #0d9f76;"
+            );
+        } else {
+            root.setAttribute("style",
+                "--bg-color-1: #262543;--bg-color-2: #3f3b6c;--bg-color-3: #504b88;--bg-color-4: #36335f;--bg-color-5: #3e3a6b;"
+            );
+        }
+        if (themeFlag === 5) {
+            themeFlag = 1;
+        } else {
+            themeFlag++;
+        }
+    }
+
+
+    function showUserdtl() {
+        alert("comfun");
+        var htmlPath = "http://127.0.0.1:8848/sidebar/2.html";
+        document.getElementById("wrap-iframe").setAttribute("src", htmlPath);
+    }
+</script>
+
+</body>
+</html>

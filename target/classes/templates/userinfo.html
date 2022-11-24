@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>登录成功</title>
+    <meta charset="UTF-8">
+    <link href="favicon.ico" rel="shortcut icon"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+    <style type="text/css">
+        body, table {
+            font-size: 12px;
+        }
+
+        table {
+            table-layout: fixed;
+            empty-cells: show;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td {
+            height: 30px;
+        }
+
+        h1, h2, h3 {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .table {
+            border: 1px solid #cad9ea;
+            color: #666;
+        }
+
+        .table tr {
+            text-align: center;
+        }
+
+        .table th {
+            background-repeat: repeat-x;
+            height: 30px;
+            text-align: center;
+            width: auto;
+        }
+
+        caption {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .form-1 {
+            width: 25px;
+            text-align: center;
+        }
+
+        .form-2 {
+            width: 75px;
+            text-align: center;
+        }
+
+        .form-3 {
+            width: 150px;
+        }
+
+        .form-4 {
+            width: 200px;
+        }
+
+        .table td, .table th {
+            border: 1px solid #cad9ea;
+            padding: 0 1em 0;
+        }
+
+        .table tr.alter {
+            background-color: #f5fafe;
+        }
+
+        .btn-div {
+            margin-top: 10px;
+        }
+
+        input {
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="nav">
+    <ul>
+        <li><a href="1.html">首页</a></li>
+        <li><a href="2.html">个人信息</a></li>
+        <li><a href="3.html">职工信息</a></li>
+        <li><a href="#">考勤统计</a></li>
+        <li><a href="#">工资条</a></li>
+        <li><a href="#">联系我们</a></li>
+        <li class="last"><a href="#">留言反馈</a></li>
+    </ul>
+</div>
+<hr>
+<table width="90%" class="table">
+    <caption>个人信息</caption>
+    <tr class="table-title">
+        <td class="form-1">序号</td>
+        <td class="form-2">姓名</td>
+        <td class="form-1">性别</td>
+        <td class="form-1">年龄</td>
+        <td class="form-2">电话</td>
+        <td class="form-2">生日</td>
+        <td class="form-4">地址</td>
+        <td class="form-2">职位</td>
+        <td class="form-2">工资</td>
+        <td class="form-3">邮箱</td>
+        <td class="form-2">密码</td>
+        <td class="form-1">状态</td>
+        <td class="form-1"></td>
+    </tr>
+    <form th:action="@{/updateuser}" th:method="POST">
+        <tr class="alter">
+            <td><input readonly="true" type="text" name="id" th:value="${user.id}" class="form-1"></td>
+            <td><input readonly="true" type="text" name="name" th:value="${user.name}" class="form-2"></td>
+            <td><input readonly="true" type="text" name="sex" th:value="${user.sex}" class="form-1"></td>
+            <td><input readonly="true" type="text" name="age" th:value="${user.age}" class="form-1"></td>
+            <td><input readonly="true" type="text" name="phone" th:value="${user.phone}" class="form-2"></td>
+            <td><input readonly="true" type="text" name="birthday" th:value="${user.birthday}" class="form-2"></td>
+            <td><input readonly="true" type="text" name="address" th:value="${user.address}" class="form-4"></td>
+            <td><input readonly="true" type="text" name="position" th:value="${user.position}" class="form-2"></td>
+            <td><input readonly="true" type="text" name="salary" th:value="${user.salary}" class="form-2"></td>
+            <td><input readonly="true" type="text" name="email" th:value="${user.email}" class="form-3"></td>
+            <td><input readonly="true" type="text" name="password" th:value="${user.password}" class="form-2"></td>
+            <td><input readonly="true" type="text" name="state" th:value="${user.state}" class="form-1"></td>
+            <td><input type="submit" value="修改" id='submit'></td>
+        </tr>
+
+    </form>
+</table>
+<div class="btn-div">
+    <a href="/userlist">
+        <button id='scan'>查看职工列表</button>
+    </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="index.html">
+        <button id='exit'>退出</button>
+    </a>
+</div>
+<div>
+    <img src="http://localhost:8082/img/user.png" width="100px" height="100px" alt="职工头像">
+</div>
+</body>
+</html>

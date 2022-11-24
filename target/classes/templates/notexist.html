@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>用户不存在</title>
+    <meta charset="UTF-8">
+    <link href="favicon.ico" rel="shortcut icon"/>
+    <style type="text/css">
+        div {
+            text-align: center;
+        }
+        div h1 {
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>登录失败</h1>
+    <p>
+        没有 <em th:text="${name}"></em> 的职工信息，请<a href="register">注册</a>后再登录！
+    </p>
+</div>
+</body>
+</html>

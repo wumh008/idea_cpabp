@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.psbc.cpabp.CpabpApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.896 s - in com.psbc.cpabp.CpabpApplicationTests

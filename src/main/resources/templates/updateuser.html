@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+    <link href="favicon.ico" rel="shortcut icon"/>
+    <script type="text/javascript" src="webjars/jquery/3.5.1/jquery.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/4.5.0/js/bootstrap.js"></script>
+    <style type="text/css">
+        .login-container {
+            width: 500px;
+            margin: auto;
+            border: 2px solid #c9e7ec;
+            border-radius: 5%;
+            margin-top: 50px;
+        }
+
+        .login-nav {
+            width: 500px;
+            height: 25px;
+            padding: 20px 0 20px;
+            text-align: center;
+            line-height: 0px;
+            font-size: 26px;
+            color: #000000;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        #form div {
+            margin: auto;
+            margin-left: 95px;
+            margin-top: 10px;
+        }
+
+        #form div span {
+            font-size: 12px;
+        }
+
+        button {
+            line-height: 30px;
+            margin-top: 5px;
+            margin-bottom: 30px;
+            width: 95px;
+            height: 30px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+            color: #FFFFFF;
+        }
+
+        button:hover {
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        }
+
+    </style>
+</head>
+<body style="background-color: aliceblue;">
+<div class="login-container">
+    <div class="login-nav"><p>修改个人信息</p></div>
+    <hr width="90%">
+    <div id="form" style="">
+        <form action="/update" role="form" method="POST">
+            <div class="form-group">
+                <label class="col-xs-4" style="width:75px;">姓名:</label>
+                <label class="col-xs-8"><input type="text" name="name" id="name" class="form-control"
+                                               th:value="${user.name}"
+                                               placeholder="请填写姓名" onblur="checkUserName()"/></label>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4" style="width:75px;">电话:</label>
+                <label class="col-xs-8"><input type="number" name="phone" id="phone" class="form-control"
+                                               th:value="${user.phone}"
+                                               placeholder="请填写电话" onblur="checkUserPhone()"/></label>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4" style="width:75px;">生日:</label>
+                <label class="col-xs-8"><input type="text" name="birthday" id="birthday" class="form-control"
+                                               th:value="${user.birthday}"
+                                               placeholder="请填写生日" onblur="checkUseBirthday()"/></label>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4" style="width:75px;">地址:</label>
+                <label class="col-xs-8"><input type="text" name="address" id="address" class="form-control"
+                                               th:value="${user.address}"
+                                               placeholder="请填写地址" onblur="checkUserAddress()"/></label>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4" style="width:75px;">职位:</label>
+                <label class="col-xs-8"><input type="text" name="position" id="position" class="form-control"
+                                               th:value="${user.position}"
+                                               placeholder="请填写职位" onblur="checkUserPosition()"/></label>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4" style="width:75px;">工资:</label>
+                <label class="col-xs-8"><input type="text" name="salary" id="salary" class="form-control"
+                                               th:value="${user.salary}"
+                                               placeholder="请填写工资" onblur="checkUserSalary()"/></label>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4" style="width:75px;">邮箱:</label>
+                <label class="col-xs-8"><input type="email" name="email" id="email" class="form-control"
+                                               th:value="${user.email}"
+                                               placeholder="请填写邮箱" onblur="checkUserEmail()"/></label>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4" style="width:75px;">密码:</label>
+                <label class="col-xs-8"><input type="password" name="password" id="password" class="form-control"
+                                               th:value="${user.password}"
+                                               placeholder="请填写密码" onblur="checkUserPassword()"/></label>
+                <span title="显示密码" style="cursor: pointer;" id="pwdSwitchOpen" onclick="openPwd(1)">开</span>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-2" style="width:35px;">
+                    <input type="radio" name="sex" value="男"/>男
+                </label>
+                <label class="col-xs-2" style="width:35px;">
+                    <input type="radio" name="sex" value="女"/>女
+                </label>
+                &nbsp;
+                <label class="col-xs-4" style="width:45px;">年龄:</label>
+                <label class="col-xs-4"><input style="width:70px;" type="number" name="age" id="age"
+                                               th:value="${user.age}"
+                                               class="form-control"/>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5">
+                    <button type="submit" class="btn btn-primary btn-block">提交</button>
+                </label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label class="col-sm-5">
+                    <button type="reset" class="btn btn-warning btn-block">重置</button>
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    function openPwd(flag) {
+        pwd = $("#password").val();
+        if (pwd == "") {
+            alert("请先设置密码");
+            return;
+        }
+        var close = "<span title='隐藏密码' style='cursor: pointer; color:red;margin-left:4px;' id='pwdSwitchClose' onclick='openPwd(0)'>关</span>";
+        var open = "<span title='显示密码' style='cursor: pointer;margin-left:4px;'  id='pwdSwitchOpen' onclick='openPwd(1)'>开</span>";
+        if (flag == 1) {
+            $("#password").attr("type", "text");
+            $("#password").val(pwd);
+            $("#pwdSwitchOpen").remove();
+            $("#password").parent().after(close);
+            //$("#pwdSwitchOpen").css("visibility","hidden");
+            //$("#pwdSwitchClose").css("visibility","visible");
+        } else if (flag == 0) {
+            $("#password").attr("type", "password");
+            $("#password").val(pwd);
+            //$("#pwdSwitchClose").css("visibility","hidden");
+            //$("#pwdSwitchOpen").css("visibility","visible");
+            $("#pwdSwitchClose").remove();
+            $("#password").parent().after(open);
+        }
+    }
+
+    function checkUserName() {
+        var userName = $("#userName").val();
+        $.ajax({
+            url: "/checkUser",
+            type: "POST",
+            data: {"userName": userName},
+            success: function (data) {
+                if (data.code == 0) {
+                    alert(data.msg);
+                }
+            },
+            dataType: "json"
+        });
+    }
+
+    function checkUserAge() {
+    }
+
+    function checkUserAddress() {
+    }
+
+    function checkUserPassword() {
+    }
+
+    function checkUserPhone() {
+    }
+
+    function checkUserEmail() {
+    }
+
+    function checkUserPosition() {
+    }
+
+    function checkUserSalary() {
+    }
+
+    function checkUseBirthday() {
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.psbc.cpabp.mapper.user.UserMapper">
+    <resultMap id="UserMapper" type="com.psbc.cpabp.entity.TbUser">
+        <!--property:java字段名 column:数据库字段名 -->
+        <id property="id" javaType="java.lang.String" column="id" jdbcType="VARCHAR"/>
+        <result property="name" javaType="java.lang.String" column="name" jdbcType="VARCHAR"/>
+        <result property="sex" javaType="java.lang.String" column="sex" jdbcType="VARCHAR"/>
+        <result property="age" javaType="java.lang.String" column="age" jdbcType="VARCHAR"/>
+        <result property="phone" javaType="java.lang.String" column="phone" jdbcType="VARCHAR"/>
+        <result property="birthday" javaType="java.lang.String" column="birthday" jdbcType="VARCHAR"/>
+        <result property="address" javaType="java.lang.String" column="address" jdbcType="VARCHAR"/>
+        <result property="position" javaType="java.lang.String" column="position" jdbcType="VARCHAR"/>
+        <result property="salary" javaType="java.lang.String" column="salary" jdbcType="VARCHAR"/>
+        <result property="email" javaType="java.lang.String" column="email" jdbcType="VARCHAR"/>
+        <result property="password" javaType="java.lang.String" column="password" jdbcType="VARCHAR"/>
+        <result property="state" javaType="java.lang.String" column="state" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="queryUserInfo" resultMap="UserMapper">
+        SELECT id,name,sex,age,phone,birthday,address,position,salary,email,password,state from tb_user
+        <where>
+            <if test="name !=null">
+                and name=#{name}
+            </if>
+            <if test="password !=null">
+                and password=#{password}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryUserList" resultMap="UserMapper">
+        SELECT id,name,sex,age,phone,birthday,address,position,salary,email,password,state from tb_user order by id
+    </select>
+
+    <insert id="addUserInfo" parameterType="com.psbc.cpabp.entity.TbUser">
+        INSERT INTO tb_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id,
+            name,
+            <if test="sex !=null">
+                sex,
+            </if>
+            <if test="age !=null">
+                age,
+            </if>
+            <if test="phone !=null">
+                phone,
+            </if>
+            <if test="birthday !=null">
+                birthday,
+            </if>
+            <if test="address !=null">
+                address,
+            </if>
+            <if test="position !=null">
+                position,
+            </if>
+            <if test="salary !=null">
+                salary,
+            </if>
+            <if test="email !=null">
+                email,
+            </if>
+            <if test="password !=null">
+                password,
+            </if>
+            <if test="state !=null">
+                state,
+            </if>
+
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            (select cast((to_number(max(id),'99999')+1) as VARCHAR) from tb_user),
+            #{name},
+            <if test="sex !=null">
+                #{sex},
+            </if>
+            <if test="age !=null">
+                #{age},
+            </if>
+            <if test="phone !=null">
+                #{phone},
+            </if>
+            <if test="birthday !=null">
+                #{birthday},
+            </if>
+            <if test="address !=null">
+                #{address},
+            </if>
+            <if test="position !=null">
+                #{position},
+            </if>
+            <if test="salary !=null">
+                #{salary},
+            </if>
+            <if test="email !=null">
+                #{email},
+            </if>
+            <if test="password !=null">
+                #{password},
+            </if>
+            <if test="state !=null">
+                #{state},
+            </if>
+        </trim>
+
+    </insert>
+
+    <update id="updateUserByName" parameterType="com.psbc.cpabp.entity.TbUser">
+        Update tb_user
+        <set>
+            <if test="sex !=null">
+                sex=#{sex},
+            </if>
+            <if test="age !=null">
+                age=#{age},
+            </if>
+            <if test="phone !=null">
+                phone=#{phone},
+            </if>
+            <if test="birthday !=null">
+                birthday=#{birthday},
+            </if>
+            <if test="address !=null">
+                address=#{address},
+            </if>
+            <if test="position !=null">
+                position=#{position},
+            </if>
+            <if test="salary !=null">
+                salary=#{salary},
+            </if>
+            <if test="email !=null">
+                email=#{email},
+            </if>
+            <if test="password !=null">
+                password=#{password},
+            </if>
+            <if test="state !=null">
+                state=#{state},
+            </if>
+        </set>
+        where name=#{name}
+    </update>
+
+    <delete id="deleteUser">
+        delete
+        from tb_user
+        where id = #{id}
+          and name = #{name}
+    </delete>
+
+    <select id="countUser">
+        select count(id)
+        from user
+    </select>
+</mapper>

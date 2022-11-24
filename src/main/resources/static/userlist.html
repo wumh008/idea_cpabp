@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>用户列表</title>
+    <meta charset="UTF-8">
+    <link href="favicon.ico" rel="shortcut icon"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+    <style type="text/css">
+        table {
+            font-size: 12px;
+        }
+
+        table {
+            table-layout: fixed;
+            empty-cells: show;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td {
+            height: 30px;
+        }
+
+        h1, h2, h3 {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .table {
+            border: 1px solid #cad9ea;
+            color: #666;
+        }
+
+        .table-title {
+            text-align: center;
+        }
+
+        .table th {
+            background-repeat: repeat-x;
+            height: 30px;
+            text-align: center;
+            width: auto;
+        }
+
+        caption {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .form-1 {
+            width: 25px;
+            text-align: center;
+        }
+
+        .form-2 {
+            width: 75px;
+            text-align: center;
+        }
+
+        .form-3 {
+            width: 150px;
+        }
+
+        .form-4 {
+            width: 200px;
+        }
+
+        .table td, .table th {
+            border: 1px solid #cad9ea;
+            padding: 0 1em 0;
+        }
+
+        .table tr.alter {
+            background-color: #f5fafe;
+        }
+
+        input {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div id="nav">
+    <ul>
+        <li><a href="1.html">首页</a></li>
+        <li><a href="2.html">个人信息</a></li>
+        <li><a href="userlist">职工信息</a></li>
+        <li><a href="#">考勤统计</a></li>
+        <li><a href="#">工资条</a></li>
+        <li><a href="#">联系我们</a></li>
+        <li class="last"><a href="#">留言反馈</a></li>
+    </ul>
+</div>
+<hr>
+<table width="90%" class="table">
+    <caption>职工信息</caption>
+    <tr class="table-title">
+        <td class="form-1">序号</td>
+        <td class="form-2">姓名</td>
+        <td class="form-1">性别</td>
+        <td class="form-1">年龄</td>
+        <td class="form-2">电话</td>
+        <td class="form-2">生日</td>
+        <td class="form-4">地址</td>
+        <td class="form-2">职位</td>
+        <td class="form-2">工资</td>
+        <td class="form-3">邮箱</td>
+        <td class="form-2">密码</td>
+        <td class="form-1">状态</td>
+    </tr>
+    <tr th:each="user : ${luser}">
+        <td name="id" th:text="${user.id}" class="form-1"></td>
+        <td name="name" th:text="${user.name}" class="form-2"></td>
+        <td name="sex" th:text="${user.sex}" class="form-1"></td>
+        <td name="age" th:text="${user.age}" class="form-1"></td>
+        <td name="phone" th:text="${user.phone}" class="form-2"></td>
+        <td name="birthday" th:text="${user.birthday}" class="form-2"></td>
+        <td name="address" th:text="${user.address}" class="form-4"></td>
+        <td name="position" th:text="${user.position}" class="form-2"></td>
+        <td name="salary" th:text="${user.salary}" class="form-2"></td>
+        <td name="email" th:text="${user.email}" class="form-3"></td>
+        <td name="password" th:text="${user.password}" class="form-2"></td>
+        <td name="state" th:text="${user.state}" class="form-1"></td>
+    </tr>
+</table>
+</body>
+</html>

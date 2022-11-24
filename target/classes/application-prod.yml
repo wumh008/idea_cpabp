@@ -1,0 +1,46 @@
+#dev开发环境配置信息
+#端口
+server:
+  port: 8082
+  path: /
+
+#数据库连接
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/mytestdb2
+    username: mytestdb2
+    password: mytestdb2
+  thymeleaf:
+    prefix: classpath:/static/
+#    prefix: classpath:/templates/
+#    prefix: classpath:/
+    mode: html5
+    encoding: utf-8
+    suffix: .html
+
+#mybatis 配置
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.psbc.cpabp.entity
+
+#日志配置
+logging:
+  level:
+    com:
+      psbc:
+        cpabp: debug   #trace<debug<info<warn<error
+  file:
+    path: D:\MyJava\WorkSpace\cpabp
+    name: cpabp.log
+
+#热部署配置
+devtools:
+  restart:
+    enabled: false  #设置开启热部署
+    additional-paths: src/main/java #重启目录
+    exclude: WEB-INF/**
+  livereload:
+    enabled: true #设置开启热部署
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效
