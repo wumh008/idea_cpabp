@@ -3,7 +3,6 @@ package com.psbc.cpabp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 import java.io.FileNotFoundException;
 
@@ -15,7 +14,7 @@ public class CpabpApplication {
 
     //Spring应用启动入口
     public static void main(String[] args) throws FileNotFoundException {
-        log.info("CpabpApplication begin...");
+        log.info("CpabpApplication begin......");
         SpringApplication.run(CpabpApplication.class, args);
         log.info("CpabpApplication ready......");
         //final File basePath = new File(ResourceUtils.getURL("classpath:").getPath());
